@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9fafb;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #4a90e2;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin: 5px 0 0;
+        }
+        .container {
+            display: flex;
+            flex-wrap: nowrap;
+            max-width: 1200px;
+            margin: 30px auto;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        .about {
+            flex: 3;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .about h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #4a90e2;
+        }
+        .experience {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .experience-item {
+            border-left: 4px solid #4a90e2;
+            padding-left: 15px;
+            background: #f0f4f8;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .experience-item h3 {
+            margin: 0;
+            color: #333;
+        }
+        .experience-item ul {
+            list-style-type: disc;
+            margin: 10px 0 0;
+            padding-left: 20px;
+            color: #555;
+        }
+        .categories {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .category {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .category a {
+            text-decoration: none;
+            color: #4a90e2;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Srinivas's Portfolio</h1>
+        <p>A glimpse into my experiences and interests</p>
+    </header>
+
+    <div class="container">
+        <div class="categories">
+            <div class="category">
+                <a href="product_management.html">Product Management Websites</a>
+            </div>
+            <div class="category">
+                <a href="retail_research.html">Retail Research Websites</a>
+            </div>
+            <div class="category">
+                <a href="investment_related.html">Investment Related Websites</a>
+            </div>
+            <div class="category">
+                <a href="college_education.html">College Education Related</a>
+            </div>
+            <div class="category">
+                <a href="prof_development.html">Professional Development Websites</a>
+            </div>
+            <div class="category">
+                <a href="research_competitor.html">Research And Competitor Analysis</a>
+            </div>
+            <div class="category">
+                <a href="my_travels.html">My Travels</a>
+            </div>
+        </div>
+
+        <section class="about">
+            <h2>About Srinivas Nagappa</h2>
+            <p>I am an IT professional (<a href="https://www.linkedin.com/in/srinivasnagappa/">LinkedIn</a>) with majority of my experience working in Ecommerce industry and prior to it in PLM industry. My skill sets include <b>Java/J2EE, Spring Framework, Springboot, AWS, Apigee and Oracle Commece</b>. I have immense interest in getting into Product Management and Investing and Travel as my passions. The links on the left have some useful information if one wants to explore and below are some of the companies where I spent most of my time and some key projects I was part of:</p>
+            <div class="experience">
+                <div class="experience-item">
+                    <h3>Biglots Inc</h3>
+                    <ul>
+                        <li>Nominated for shining North Star Award for having reduced the run time of a batch job from an 90 minutes to 5 minutes</li>
+                        <li>Led the development effort of Amazon Marketplace integration.</li>
+                        <li>Developed webservices for Biglots Mobile App.</li>
+			<li>Providing support for Biglots.com website and helping in holiday readyness.</li>
+
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>Agilent Technologies</h3>
+                    <ul>
+                        <li>Handled a new CPQ Integration initiative which involved lot of cross functional team collaboration.</li>
+                        <li>Helped reduce the page load times during Check out flow.</li>
+                        <li>Onsite-offshore collaboration and helped improve the onboarding process by emphasizing on documentation.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>Nutrisystem</h3>
+                    <ul>
+                        <li>Development of SouthbeachDiet.com webiste after it was acquired by Nutrisystem</li>
+                        <li>Tokenization of Credit Card for payment.</li>
+                        <li>Implemented Favoriting Feature of Products and provided valuable suggestions on improving features on the site.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>Walgreens</h3>
+                    <ul>
+                        <li>Led the development effort of services for Walgreens Mobile App and Developer Initiative.</li>
+                        <li>Was awarded Most Valuable Player for implementing SMS batch job for refill reminders.</li>
+                        <li>Led a team of around 15 developers and ensured timely delivery of projects and ensuring quality is met.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>Infosys</h3>
+                    <ul>
+                        <li>Collaborated with clients all across the globe notable ones including Target, Porsche AG and Matrix One.</li>
+                        <li>Maintained client relationships and ensured satisfaction with deliverables.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
