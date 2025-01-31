@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Apparel Retailers in the U.S.</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        h1 {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            margin: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            display: flex;
+            flex: 1;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar div {
+            padding: 10px;
+            cursor: pointer;
+            border: 1px solid #006bb3;
+            text-align: center;
+            background-color: #006bb3;
+            color: white;
+            border-radius: 5px;
+        }
+        .sidebar div:hover {
+            background-color: #005b8d;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+            background-color: #fff;
+            overflow-y: auto;
+        }
+        .tab-links a {
+            color: #007bff;
+            text-decoration: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            display: block;
+        }
+        .tab-links a:hover {
+            background-color: #f0f0f0;
+        }
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                flex-direction: row;
+                overflow-x: auto;
+            }
+            .sidebar div {
+                flex: 1;
+                text-align: center;
+            }
+            .content {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+<h1>Top Apparel Retailers in the U.S.</h1>
+
+<div class="container">
+    
+    <div class="sidebar">
+        <div onclick="showTab('department')">Department Stores</div>
+        <div onclick="showTab('discount')">Discount & Fast-Fashion</div>
+        <div onclick="showTab('specialty')">Specialty Stores</div>
+        <div onclick="showTab('online')">Online Retailers</div>
+        <div onclick="showTab('athletic')">Athletic Apparel</div>
+        <div onclick="showTab('luxury')">Luxury Brands</div>
+        <div onclick="showTab('value')">Discount & Value Retailers</div>
+        <div onclick="showTab('outdoor')">Outdoor & Adventure</div>
+        <div onclick="showTab('others')">Other Notable Retailers</div>
+    </div>
+
+    <div class="content">
+	<a href="retail_types.html">Back</a>
+        <div id="department">
+            <h2>Department Stores</h2>
+            <div class="tab-links">
+                <a href="https://www.macys.com" target="_blank">Macy's</a>
+                <a href="https://www.nordstrom.com" target="_blank">Nordstrom</a>
+                <a href="https://www.dillards.com" target="_blank">Dillard's</a>
+                <a href="https://www.saksfifthavenue.com" target="_blank">Saks Fifth Avenue</a>
+                <a href="https://www.kohls.com" target="_blank">Kohl's</a>
+                <a href="https://www.jcpenney.com" target="_blank">JCPenney</a>
+            </div>
+        </div>
+
+        <div id="discount" style="display:none;">
+            <h2>Discount & Fast-Fashion Retailers</h2>
+            <div class="tab-links">
+                <a href="https://www.tjmaxx.com" target="_blank">TJ Maxx</a>
+                <a href="https://www.marshalls.com" target="_blank">Marshalls</a>
+                <a href="https://www.rossstores.com" target="_blank">Ross Dress for Less</a>
+                <a href="https://www.hm.com" target="_blank">H&M</a>
+                <a href="https://www.forever21.com" target="_blank">Forever 21</a>
+                <a href="https://www.zara.com" target="_blank">Zara</a>
+                <a href="https://www.uniqlo.com" target="_blank">Uniqlo</a>
+                <a href="https://www.shein.com" target="_blank">Shein</a>
+                <a href="https://www.burlington.com" target="_blank">Burlington Coat Factory</a>
+            </div>
+        </div>
+
+        <div id="specialty" style="display:none;">
+            <h2>Specialty Apparel Stores</h2>
+            <div class="tab-links">
+                <a href="https://www.gap.com" target="_blank">Gap Inc. (Gap, Banana Republic, Old Navy)</a>
+                <a href="https://www.ae.com" target="_blank">American Eagle Outfitters</a>
+                <a href="https://www.abercrombie.com" target="_blank">Abercrombie & Fitch</a>
+                <a href="https://www.victoriassecret.com" target="_blank">Victoria's Secret</a>
+                <a href="https://www.lb.com" target="_blank">L Brands (Bath & Body Works, PINK)</a>
+                <a href="https://www.aeropostale.com" target="_blank">Aeropostale</a>
+                <a href="https://www.hollisterco.com" target="_blank">Hollister Co.</a>
+                <a href="https://www.express.com" target="_blank">Express</a>
+                <a href="https://www.shopjustice.com" target="_blank">Justice</a>
+            </div>
+        </div>
+
+        <div id="online" style="display:none;">
+            <h2>Online Retailers</h2>
+            <div class="tab-links">
+                <a href="https://www.amazon.com/fashion" target="_blank">Amazon Fashion</a>
+                <a href="https://www.asos.com" target="_blank">ASOS</a>
+                <a href="https://www.modcloth.com" target="_blank">ModCloth</a>
+                <a href="https://www.boohoo.com" target="_blank">Boohoo</a>
+                <a href="https://www.revolve.com" target="_blank">Revolve</a>
+            </div>
+        </div>
+
+        <div id="athletic" style="display:none;">
+            <h2>Athletic Apparel Retailers</h2>
+            <div class="tab-links">
+                <a href="https://www.nike.com" target="_blank">Nike</a>
+                <a href="https://www.adidas.com" target="_blank">Adidas</a>
+                <a href="https://www.underarmour.com" target="_blank">Under Armour</a>
+                <a href="https://www.lululemon.com" target="_blank">Lululemon Athletica</a>
+                <a href="https://www.footlocker.com" target="_blank">Foot Locker</a>
+                <a href="https://www.athleta.com" target="_blank">Athleta</a>
+            </div>
+        </div>
+
+        <div id="luxury" style="display:none;">
+            <h2>Luxury Apparel Brands</h2>
+            <div class="tab-links">
+                <a href="https://www.gucci.com" target="_blank">Gucci</a>
+                <a href="https://www.louisvuitton.com" target="_blank">Louis Vuitton</a>
+                <a href="https://www.chanel.com" target="_blank">Chanel</a>
+                <a href="https://www.prada.com" target="_blank">Prada</a>
+                <a href="https://www.tiffany.com" target="_blank">Tiffany & Co.</a>
+                <a href="https://www.burberry.com" target="_blank">Burberry</a>
+            </div>
+        </div>
+
+        <div id="value" style="display:none;">
+            <h2>Discount & Value Retailers</h2>
+            <div class="tab-links">
+                <a href="https://www.walmart.com" target="_blank">Walmart</a>
+                <a href="https://www.target.com" target="_blank">Target</a>
+                <a href="https://www.costco.com" target="_blank">Costco</a>
+                <a href="https://www.bjs.com" target="_blank">BJ's Wholesale</a>
+            </div>
+        </div>
+
+        <div id="outdoor" style="display:none;">
+            <h2>Outdoor & Adventure Retailers</h2>
+            <div class="tab-links">
+                <a href="https://www.rei.com" target="_blank">REI</a>
+                <a href="https://www.cabelas.com" target="_blank">Cabela's</a>
+                <a href="https://www.dickssportinggoods.com" target="_blank">Dick's Sporting Goods</a>
+                <a href="https://www.basspro.com" target="_blank">Bass Pro Shops</a>
+            </div>
+        </div>
+
+        <div id="others" style="display:none;">
+            <h2>Other Notable Retailers</h2>
+            <div class="tab-links">
+                <a href="https://www.jcrew.com" target="_blank">J.Crew</a>
+                <a href="https://www.saksfifthavenue.com" target="_blank">Saks Fifth Avenue</a>
+                <a href="https://www.zara.com" target="_blank">Zara</a>
+                <a href="https://www.uniqlo.com" target="_blank">Uniqlo</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showTab(tabId) {
+        const contents = document.querySelectorAll('.content > div');
+        contents.forEach(content => {
+            content.style.display = 'none';
+        });
+        document.getElementById(tabId).style.display = 'block';
+    }
+
+    // Show the department tab by default
+    showTab('department');
+</script>
+
+</body>
+</html>

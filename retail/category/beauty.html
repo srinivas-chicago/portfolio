@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Beauty Retailers in the U.S.</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        h1 {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            margin: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            display: flex;
+            flex: 1;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar div {
+            padding: 10px;
+            cursor: pointer;
+            border: 1px solid #006bb3;
+            text-align: center;
+            background-color: #006bb3;
+            color: white;
+            border-radius: 5px;
+        }
+        .sidebar div:hover {
+            background-color: #005b8d;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+            background-color: #fff;
+            overflow-y: auto;
+        }
+        .tab-links a {
+            color: #007bff;
+            text-decoration: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            display: block;
+        }
+        .tab-links a:hover {
+            background-color: #f0f0f0;
+        }
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                flex-direction: row;
+                overflow-x: auto;
+            }
+            .sidebar div {
+                flex: 1;
+                text-align: center;
+            }
+            .content {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Top Beauty Retailers in the U.S.</h1>
+
+<div class="container">
+    <div class="sidebar">
+        <div onclick="showTab('skincare')">Skincare</div>
+        <div onclick="showTab('cosmetics')">Cosmetics</div>
+        <div onclick="showTab('haircare')">Haircare</div>
+        <div onclick="showTab('fragrance')">Fragrance</div>
+        <div onclick="showTab('wellness')">Wellness</div>
+        <div onclick="showTab('drugstores')">Drugstore Beauty</div>
+        <div onclick="showTab('luxury')">Luxury Beauty Brands</div>
+        <div onclick="showTab('department')">Department Store Beauty</div>
+        <div onclick="showTab('online')">Online Beauty Retailers</div>
+    </div>
+
+    <div class="content">
+	<a href="retail_types.html">Back</a>
+        <div id="skincare">
+            <h2>Skincare Retailers</h2>
+            <div class="tab-links">
+                <a href="https://www.sephora.com" target="_blank">Sephora</a>
+                <a href="https://www.ulta.com" target="_blank">Ulta Beauty</a>
+                <a href="https://www.dermstore.com" target="_blank">Dermstore</a>
+                <a href="https://www.paulaschoice.com" target="_blank">Paula's Choice</a>
+                <a href="https://www.cetaphil.com" target="_blank">Cetaphil</a>
+                <a href="https://www.e.l.fcosmetics.com" target="_blank">e.l.f. Cosmetics</a>
+            </div>
+        </div>
+
+        <div id="cosmetics" style="display:none;">
+            <h2>Cosmetics Retailers</h2>
+            <div class="tab-links">
+                <a href="https://www.maybelline.com" target="_blank">Maybelline</a>
+                <a href="https://www.covergirl.com" target="_blank">Covergirl</a>
+                <a href="https://www.fentybeauty.com" target="_blank">Fenty Beauty</a>
+                <a href="https://www.lorealparisusa.com" target="_blank">L'Oréal Paris</a>
+                <a href="https://www.revlon.com" target="_blank">Revlon</a>
+                <a href="https://www.bobbibrowncosmetics.com" target="_blank">Bobbi Brown</a>
+            </div>
+        </div>
+
+        <div id="haircare" style="display:none;">
+            <h2>Haircare Retailers</h2>
+            <div class="tab-links">
+                <a href="https://www.pantene.com" target="_blank">Pantene</a>
+                <a href="https://www.headandshoulders.com" target="_blank">Head & Shoulders</a>
+                <a href="https://www.dove.com" target="_blank">Dove</a>
+                <a href="https://www.ouai.com" target="_blank">Ouai</a>
+                <a href="https://www.bumbleandbumble.com" target="_blank">Bumble and Bumble</a>
+                <a href="https://www.livingproof.com" target="_blank">Living Proof</a>
+            </div>
+        </div>
+
+        <div id="fragrance" style="display:none;">
+            <h2>Fragrance Retailers</h2>
+            <div class="tab-links">
+                <a href="https://www.victoriassecret.com" target="_blank">Victoria's Secret</a>
+                <a href="https://www.bathandbodyworks.com" target="_blank">Bath & Body Works</a>
+                <a href="https://www.chanel.com" target="_blank">Chanel</a>
+                <a href="https://www.dior.com" target="_blank">Dior</a>
+                <a href="https://www.gucci.com" target="_blank">Gucci</a>
+                <a href="https://www.tomford.com" target="_blank">Tom Ford</a>
+            </div>
+        </div>
+
+        <div id="wellness" style="display:none;">
+            <h2>Wellness Retailers</h2>
+            <div class="tab-links">
+                <a href="https://www.athleta.com" target="_blank">Athleta</a>
+                <a href="https://www.goop.com" target="_blank">Goop</a>
+                <a href="https://www.farmacybeauty.com" target="_blank">Farmacy</a>
+                <a href="https://www.fresh.com" target="_blank">Fresh</a>
+                <a href="https://www.sakara.com" target="_blank">Sakara</a>
+            </div>
+        </div>
+
+        <div id="drugstores" style="display:none;">
+            <h2>Drugstore Beauty Retailers</h2>
+            <div class="tab-links">
+                <a href="https://www.cvs.com" target="_blank">CVS Pharmacy</a>
+                <a href="https://www.walgreens.com" target="_blank">Walgreens</a>
+                <a href="https://www.target.com/c/beauty" target="_blank">Target Beauty</a>
+                <a href="https://www.walmart.com" target="_blank">Walmart Beauty</a>
+            </div>
+        </div>
+
+        <div id="luxury" style="display:none;">
+            <h2>Luxury Beauty Brands</h2>
+            <div class="tab-links">
+                <a href="https://www.lvmh.com" target="_blank">LVMH</a>
+                <a href="https://www.yves-saint-laurent.com" target="_blank">Yves Saint Laurent</a>
+                <a href="https://www.tomford.com" target="_blank">Tom Ford Beauty</a>
+                <a href="https://www.charlottetilbury.com" target="_blank">Charlotte Tilbury</a>
+                <a href="https://www.sisley-paris.com" target="_blank">Sisley Paris</a>
+            </div>
+        </div>
+
+        <div id="department" style="display:none;">
+            <h2>Department Store Beauty</h2>
+            <div class="tab-links">
+                <a href="https://www.macys.com" target="_blank">Macy's</a>
+                <a href="https://www.nordstrom.com" target="_blank">Nordstrom</a>
+                <a href="https://www.bloomingdales.com" target="_blank">Bloomingdale's</a>
+                <a href="https://www.jcpenney.com" target="_blank">JCPenney</a>
+            </div>
+        </div>
+
+        <div id="online" style="display:none;">
+            <h2>Online Beauty Retailers</h2>
+            <div class="tab-links">
+                <a href="https://www.ulta.com" target="_blank">Ulta Beauty</a>
+                <a href="https://www.sephora.com" target="_blank">Sephora</a>
+                <a href="https://www.amazon.com" target="_blank">Amazon Beauty</a>
+                <a href="https://www.glossier.com" target="_blank">Glossier</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showTab(tabId) {
+        const contents = document.querySelectorAll('.content > div');
+        contents.forEach(content => {
+            content.style.display = 'none';
+        });
+        document.getElementById(tabId).style.display = 'block';
+    }
+
+    // Show skincare tab by default
+    showTab('skincare');
+</script>
+
+</body>
+</html>
