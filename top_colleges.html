@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Top Universities</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .tabs {
+            display: flex;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            background: #ddd;
+            border: 1px solid #ccc;
+            margin-right: 5px;
+        }
+        .tab.active {
+            background: #fff;
+            border-bottom: none;
+        }
+        .content {
+            display: none;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        .content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div><a href="college_education.html">Back</a></div>
+    <br>
+    <div class="tabs">
+        <div class="tab active" onclick="showTab('public')">Top Public Universities</div>
+        <div class="tab" onclick="showTab('ivy')">Ivy League</div>
+        <div class="tab" onclick="showTab('private')">Top Private Universities</div>
+    </div>
+    
+    <div id="public" class="content active">
+        <h3>Top Public State Universities</h3>
+        <ul>
+            <li>Alabama: <a href="https://www.ua.edu/" target="_blank">University of Alabama</a>, <a href="https://www.auburn.edu/" target="_blank">Auburn University</a>, <a href="https://www.uab.edu/" target="_blank">University of Alabama at Birmingham</a></li>
+<li>Alaska: <a href="https://www.uaf.edu/" target="_blank">University of Alaska Fairbanks</a>, <a href="https://www.uas.alaska.edu/" target="_blank">University of Alaska Southeast</a></li>
+<li>Arizona: <a href="https://www.arizona.edu/" target="_blank">University of Arizona</a>, <a href="https://www.asu.edu/" target="_blank">Arizona State University</a></li>
+<li>Arkansas: <a href="https://www.uark.edu/" target="_blank">University of Arkansas</a>, <a href="https://www.uca.edu/" target="_blank">University of Central Arkansas</a></li>
+<li>California: <a href="https://www.ucla.edu/" target="_blank">University of California, Los Angeles</a>, <a href="https://www.berkeley.edu/" target="_blank">University of California, Berkeley</a>, <a href="https://ucsd.edu/" target="_blank">University of California, San Diego</a></li>
+<li>Colorado: <a href="https://www.colorado.edu/" target="_blank">University of Colorado Boulder</a>, <a href="https://www.du.edu/" target="_blank">University of Denver</a></li>
+<li>Connecticut: <a href="https://www.uconn.edu/" target="_blank">University of Connecticut</a></li>
+<li>Delaware: <a href="https://www.udel.edu/" target="_blank">University of Delaware</a></li>
+<li>Florida: <a href="https://www.ufl.edu/" target="_blank">University of Florida</a>, <a href="https://www.fsu.edu/" target="_blank">Florida State University</a>, <a href="https://www.usf.edu/" target="_blank">University of South Florida</a></li>
+<li>Georgia: <a href="https://www.uga.edu/" target="_blank">University of Georgia</a>, <a href="https://www.gatech.edu/" target="_blank">Georgia Institute of Technology</a></li>
+<li>Hawaii: <a href="https://www.hawaii.edu/" target="_blank">University of Hawaii</a></li>
+<li>Idaho: <a href="https://www.uidaho.edu/" target="_blank">University of Idaho</a></li>
+<li>Illinois: <a href="https://illinois.edu/" target="_blank">University of Illinois Urbana-Champaign</a>, <a href="https://www.uic.edu/" target="_blank">University of Illinois Chicago</a></li>
+<li>Indiana: <a href="https://www.purdue.edu/" target="_blank">Purdue University</a>, <a href="https://www.indiana.edu/" target="_blank">Indiana University Bloomington</a></li>
+<li>Iowa: <a href="https://www.uiowa.edu/" target="_blank">University of Iowa</a>, <a href="https://www.iastate.edu/" target="_blank">Iowa State University</a></li>
+<li>Kansas: <a href="https://www.ku.edu/" target="_blank">University of Kansas</a>, <a href="https://www.k-state.edu/" target="_blank">Kansas State University</a></li>
+<li>Kentucky: <a href="https://www.uky.edu/" target="_blank">University of Kentucky</a>, <a href="https://www.uky.edu/" target="_blank">University of Louisville</a></li>
+<li>Louisiana: <a href="https://www.lsu.edu/" target="_blank">Louisiana State University</a>, <a href="https://www.ulsystem.edu/" target="_blank">University of Louisiana System</a></li>
+<li>Maine: <a href="https://www.umaine.edu/" target="_blank">University of Maine</a></li>
+<li>Maryland: <a href="https://www.umd.edu/" target="_blank">University of Maryland, College Park</a>, <a href="https://www.jhu.edu/" target="_blank">Johns Hopkins University</a></li>
+<li>Massachusetts: <a href="https://www.umass.edu/" target="_blank">University of Massachusetts Amherst</a>, <a href="https://www.harvard.edu/" target="_blank">Harvard University</a></li>
+<li>Michigan: <a href="https://umich.edu/" target="_blank">University of Michigan</a>, <a href="https://www.msu.edu/" target="_blank">Michigan State University</a></li>
+<li>Minnesota: <a href="https://www.umn.edu/" target="_blank">University of Minnesota</a></li>
+<li>Mississippi: <a href="https://www.olemiss.edu/" target="_blank">University of Mississippi</a>, <a href="https://www.msstate.edu/" target="_blank">Mississippi State University</a></li>
+<li>Missouri: <a href="https://www.missouri.edu/" target="_blank">University of Missouri</a>, <a href="https://www.wustl.edu/" target="_blank">Washington University in St. Louis</a></li>
+<li>Montana: <a href="https://www.umt.edu/" target="_blank">University of Montana</a></li>
+<li>Nebraska: <a href="https://www.unl.edu/" target="_blank">University of Nebraska-Lincoln</a></li>
+<li>Nevada: <a href="https://www.unr.edu/" target="_blank">University of Nevada, Reno</a></li>
+<li>New Hampshire: <a href="https://www.unh.edu/" target="_blank">University of New Hampshire</a></li>
+<li>New Jersey: <a href="https://www.rutgers.edu/" target="_blank">Rutgers University</a>, <a href="https://tcnj.edu/" target="_blank">The College of New Jersey</a></li>
+<li>New Mexico: <a href="https://www.unm.edu/" target="_blank">University of New Mexico</a></li>
+<li>New York: <a href="https://www.cuny.edu/" target="_blank">City University of New York</a>, <a href="https://www.buffalo.edu/" target="_blank">University at Buffalo</a></li>
+<li>North Carolina: <a href="https://www.unc.edu/" target="_blank">University of North Carolina at Chapel Hill</a>, <a href="https://ncsu.edu/" target="_blank">North Carolina State University</a></li>
+<li>North Dakota: <a href="https://www.ndsu.edu/" target="_blank">North Dakota State University</a></li>
+<li>Ohio: <a href="https://www.osu.edu/" target="_blank">The Ohio State University</a>, <a href="https://www.uc.edu/" target="_blank">University of Cincinnati</a></li>
+<li>Oklahoma: <a href="https://www.ou.edu/" target="_blank">University of Oklahoma</a>, <a href="https://www.okstate.edu/" target="_blank">Oklahoma State University</a></li>
+<li>Oregon: <a href="https://www.uoregon.edu/" target="_blank">University of Oregon</a>, <a href="https://www.osu.edu/" target="_blank">Oregon State University</a></li>
+<li>Pennsylvania: <a href="https://www.psu.edu/" target="_blank">Pennsylvania State University</a>, <a href="https://www.pitt.edu/" target="_blank">University of Pittsburgh</a></li>
+<li>Rhode Island: <a href="https://www.uri.edu/" target="_blank">University of Rhode Island</a></li>
+<li>South Carolina: <a href="https://www.sc.edu/" target="_blank">University of South Carolina</a></li>
+<li>South Dakota: <a href="https://www.usd.edu/" target="_blank">University of South Dakota</a></li>
+<li>Tennessee: <a href="https://www.utk.edu/" target="_blank">University of Tennessee</a>, <a href="https://www.mtsu.edu/" target="_blank">Middle Tennessee State University</a></li>
+<li>Texas: <a href="https://www.utexas.edu/" target="_blank">University of Texas at Austin</a>, <a href="https://www.tamu.edu/" target="_blank">Texas A&M University</a></li>
+<li>Utah: <a href="https://www.utah.edu/" target="_blank">University of Utah</a></li>
+<li>Vermont: <a href="https://www.uvm.edu/" target="_blank">University of Vermont</a></li>
+<li>Virginia: <a href="https://www.virginia.edu/" target="_blank">University of Virginia</a>, <a href="https://www.vt.edu/" target="_blank">Virginia Tech</a></li>
+<li>Washington: <a href="https://www.washington.edu/" target="_blank">University of Washington</a></li>
+<li>West Virginia: <a href="https://www.wvu.edu/" target="_blank">West Virginia University</a></li>
+<li>Wisconsin: <a href="https://www.wisc.edu/" target="_blank">University of Wisconsin-Madison</a></li>
+<li>Wyoming: <a href="https://www.uwyo.edu/" target="_blank">University of Wyoming</a></li>
+
+        </ul>
+    </div>
+    
+    <div id="ivy" class="content">
+        <h3>Ivy League Universities</h3>
+        <ul>
+            <li><a href="https://www.harvard.edu/" target="_blank">Harvard University</a></li>
+            <li><a href="https://www.yale.edu/" target="_blank">Yale University</a></li>
+            <li><a href="https://www.princeton.edu/" target="_blank">Princeton University</a></li>
+            <li><a href="https://www.columbia.edu/" target="_blank">Columbia University</a></li>
+            <li><a href="https://www.cornell.edu/" target="_blank">Cornell University</a></li>
+            <li><a href="https://www.dartmouth.edu/" target="_blank">Dartmouth College</a></li>
+            <li><a href="https://www.upenn.edu/" target="_blank">University of Pennsylvania</a></li>
+            <li><a href="https://www.brown.edu/" target="_blank">Brown University</a></li>
+        </ul>
+    </div>
+    
+    <div id="private" class="content">
+        <h3>Top Private Universities</h3>
+        <ul>
+            <li><a href="https://www.stanford.edu/" target="_blank">Stanford University</a></li>
+            <li><a href="https://www.mit.edu/" target="_blank">Massachusetts Institute of Technology (MIT)</a></li>
+            <li><a href="https://www.caltech.edu/" target="_blank">California Institute of Technology (Caltech)</a></li>
+            <li><a href="https://www.chicago.edu/" target="_blank">University of Chicago</a></li>
+            <li><a href="https://www.duke.edu/" target="_blank">Duke University</a></li>
+            <li><a href="https://www.jhu.edu/" target="_blank">Johns Hopkins University</a></li>
+	    <li><a href="https://www.northwestern.edu/" target="_blank">Northwestern University</a></li>
+	    <li><a href="https://www.cmu.edu/" target="_blank">Carnegie Mellon University</a></li>
+            <li><a href="https://www.emory.edu/home/index.html" target="_blank">Emory University</a></li>
+	    <li><a href="https://www.rice.edu/" target="_blank">Rice University</a></li>
+            <li><a href="https://www.georgetown.edu/" target="_blank">Georgetown University</a></li>
+            <li><a href="https://www.nyu.edu/" target="_blank">New York University</a></li>
+	    <li><a href="https://www.tufts.edu/" target="_blank">Tufts University</a></li>
+            <li><a href="https://www.vanderbilt.edu/" target="_blank">Vanderbilt University</a></li>
+            <li><a href="https://www.nd.edu/" target="_blank">University of Notre Dame</a></li>
+        </ul>
+    </div>
+    
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>

@@ -7,13 +7,15 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
+            display: flex;
             background-color: #fafafa;
             color: #333;
         }
         h1 {
             text-align: center;
             color: #2a4d9c;
+            margin-left: 220px;
         }
         h2 {
             color: #2a4d9c;
@@ -43,38 +45,65 @@
         .content-section {
             margin-bottom: 30px;
         }
+
+        /* Navigation Bar */
+        .nav-bar {
+            width: 200px;
+            background-color: #2a4d9c;
+            height: 100vh;
+            padding-top: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            color: white;
+        }
+        .nav-bar a {
+            display: block;
+            padding: 15px;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .nav-bar a:hover {
+            background-color: #ff6347;
+        }
     </style>
 </head>
 <body>
-    <a href="index.html">Back to Portfolio</a>
-
-    <h1>Insights on College Education and Admission</h1>
-    
-    <div class="content-section">
-        <h2>Our Experience with College Applications</h2>
-        <p>My daughter is a freshman in college as of 2024. The college application process was completely new to us, and we didn't know what to expect. There were some important lessons we learned along the way:</p>
-        
-        <ul>
-            <li><strong>Be Prepared for Disappointment:</strong> If your goal is to get into Ivy League or top institutions like MIT or Stanford, be prepared for potential disappointment. Even if you have all the qualifications, admission officers might see qualities in others that they don’t see in you. This could be due to essays or some unique qualities in other candidates. Always have a backup plan in place.</li>
-            <li><strong>Don’t Assume You Can't Afford Ivy League Schools:</strong> Many Ivy League schools offer scholarships if they see unique qualities in you. Don’t assume that cost will prevent you from applying.</li>
-            <li><strong>Power of Attorney:</strong> Before your student heads to college, ensure that you have the power of attorney ready. This will allow you to make decisions on their behalf if needed.</li>
-            <li><strong>Letters of Recommendation:</strong> Most colleges require two letters of recommendation from teachers and one from a non-faculty member. Non-faculty recommendations can come from a private music tutor, sports coach, or a manager from a job. Give them enough time to craft thoughtful letters and maintain good rapport with your teachers.</li>
-            <li><strong>Open Discussion on Finances:</strong> It’s crucial to have an open conversation about the finances of college with your children.</li>
-        </ul>
+    <div class="nav-bar">
+        <a href="top_colleges.html">Top Colleges</a>
     </div>
 
-    <div class="content-section">
-        <h2>Useful Resources</h2>
-        <p>Here are some links that can be helpful during the college admission process:</p>
-        <ul>
-            <li><a href="https://www.commonapp.org/" target="_blank">Common Application</a></li>
-            <li><a href="https://studentaid.gov/h/apply-for-aid/fafsa" target="_blank">FAFSA - Financial Aid</a></li>
-            <li><a href="https://www.collegeboard.org/" target="_blank">College Board</a></li>
-            <li><a href="https://www.niche.com/" target="_blank">Niche - College Reviews</a></li>
-            <li><a href="https://www.teenlife.com/blog/10-resources-prepare-you-college-admissions/" target="_blank">TeenLife Resources for College Admissions</a></li>
-            <li><a href="https://www.purdue.edu/dfa/aid/scholarships/" target="_blank">Purdue University Scholarships</a></li>
-        </ul>
-    </div>
+    <div style="margin-left: 220px; padding: 20px;">
+        <a href="index.html">Back to Portfolio</a>
 
+        <h1>Insights on College Education and Admission</h1>
+	<div class="content-section" id="section2">
+            <h2>Useful Resources</h2>
+            <p>Here are some links that can be helpful during the college admission process:</p>
+            <ul>
+                <li><a href="https://www.commonapp.org/" target="_blank">Common Application</a></li>
+                <li><a href="https://studentaid.gov/h/apply-for-aid/fafsa" target="_blank">FAFSA - Financial Aid</a></li>
+                <li><a href="https://www.collegeboard.org/" target="_blank">College Board</a></li>
+                <li><a href="https://www.careeronestop.org/ExploreCareers/explore-careers.aspx" target="_blank">Explore Careers</a></li>
+                <li><a href="https://www.niche.com/" target="_blank">Niche - College Reviews</a></li>
+                <li><a href="https://www.teenlife.com/blog/10-resources-prepare-you-college-admissions/" target="_blank">TeenLife Resources for College Admissions</a></li>
+                <li><a href="https://www.purdue.edu/dfa/aid/scholarships/" target="_blank">Purdue University Scholarships</a></li>
+            </ul>
+        </div>
+        <div class="content-section" id="section1">
+            <h2>Our Experience with College Applications</h2>
+            <p>My daughter is a freshman in college as of 2024. The college application process was completely new to us, and we didn't know what to expect. There were some important lessons we learned along the way:</p>
+            <ul>
+                <li><strong>Be Prepared for Disappointment:</strong> If your goal is to get into Ivy League or top institutions like MIT or Stanford, be prepared for potential disappointment. Even if you have all the qualifications, admission officers might see qualities in others that they don’t see in you. This could be due to essays or some unique qualities in other candidates. Always have a backup plan in place.</li>
+                <li><strong>Don’t Assume You Can't Afford Ivy League Schools:</strong> Many Ivy League schools offer scholarships if they see unique qualities in you. Don’t assume that cost will prevent you from applying.</li>
+                <li><strong>Power of Attorney:</strong> Before your student heads to college, ensure that you have the power of attorney ready. This will allow you to make decisions on their behalf if needed.</li>
+                <li><strong>Letters of Recommendation:</strong> Most colleges require two letters of recommendation from teachers and one from a non-faculty member. Non-faculty recommendations can come from a private music tutor, sports coach, or a manager from a job. Give them enough time to craft thoughtful letters and maintain good rapport with your teachers.</li>
+                <li><strong>Open Discussion on Finances:</strong> It’s crucial to have an open conversation about the finances of college with your children.</li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
