@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NHL Hall of Fame</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid black; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        canvas { margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <a href="sportsworld.html">Back</a>
+    <h1>NHL Hall of Fame Members</h1>
+    <div>
+	<ul>
+	<li>Countries of players born outside of USA - Mostly Canada and one was born in Taiwan</li>
+	<li>16 states have NHL teams and 18 states  and one territory have at least one NHL Hall of Famers </li>
+	<li>Minnesota and Massachusetts have most members and mostly colder states have majority of the members as expected.</li>
+	</ul>
+    </div>
+    <h2>Player Count by State</h2>
+    <canvas id="playerChart" width="400" height="200"></canvas>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Player</th>
+                <th>Inducted</th>
+                <th>Birth State</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data rows will be inserted here dynamically -->
+        </tbody>
+    </table>
+    
+    
+    
+    <script>
+        const players = [
+{ "name": "Lyle Z. Wright", "inducted": 1973, "state": "Ohio" },
+  { "name": "Frank Coddy Winters", "inducted": 1973, "state": "Massachusetts" },
+  { "name": "Alfred Ralph Winsor", "inducted": 1973, "state": "Massachusetts" },
+  { "name": "William Thayer Tutt", "inducted": 1973, "state": "Colorado" },
+  { "name": "Clifford R. Thompson", "inducted": 1973, "state": "Minnesota" },
+  { "name": "Elwin Doc Romnes", "inducted": 1973, "state": "Minnesota" },
+  { "name": "Winthrop Ding Palmer", "inducted": 1973, "state": "Massachusetts" },
+  { "name": "George Owen, Jr.", "inducted": 1973, "state": "Massachusetts" },
+  { "name": "John Mariucci", "inducted": 1973, "state": "Minnesota" },
+  { "name": "Sam L. LoPresti", "inducted": 1973, "state": "Minnesota" },
+  { "name": "Thomas F. Lockhart", "inducted": 1973, "state": "New York" },
+  { "name": "Myles J. Lane", "inducted": 1973, "state": "Massachusetts" },
+  { "name": "Mike Karakas", "inducted": 1973, "state": "Minnesota" },
+  { "name": "Edward J. Jeremiah", "inducted": 1973, "state": "Massachusetts" },
+  { "name": "Malcolm K. Gordon", "inducted": 1973, "state": "New York" },
+  { "name": "Frank Moose Goheen", "inducted": 1973, "state": "Minnesota" },
+  { "name": "J.C. Doc Gibson", "inducted": 1973, "state": "Ontario Canada" },
+  { "name": "John B. Garrison", "inducted": 1973, "state": "Massachusetts" },
+  { "name": "Carl Cully Dahlstrom", "inducted": 1973, "state": "Minnesota" },
+  { "name": "John P. Chase", "inducted": 1973, "state": "Massachusetts" },
+  { "name": "Walter A. Brown", "inducted": 1973, "state": "Massachusetts" },
+  { "name": "George V. Brown", "inducted": 1973, "state": "Massachusetts" },
+  { "name": "Frank Brimsek", "inducted": 1973, "state": "Minnesota" },
+  { "name": "Hobart Hobey Baker", "inducted": 1973, "state": "Pennsylvania" },
+  { "name": "Clarence Taffy Abel", "inducted": 1973, "state": "Michigan" },
+  { "name": "Clifford Fido Purpur", "inducted": 1974, "state": "North Dakota" },
+  { "name": "William Moe", "inducted": 1974, "state": "Minnesota" },
+  { "name": "John Snooks Kelley", "inducted": 1974, "state": "Massachusetts" },
+  { "name": "Virgil Johnson", "inducted": 1974, "state": "Minnesota" },
+  { "name": "Victor Heyliger", "inducted": 1974, "state": "Massachusetts" },
+  { "name": "Doug Everett", "inducted": 1974, "state": "New Hampshire" },
+  { "name": "Victor Desjardins", "inducted": 1974, "state": "Quebec Canada" },
+  { "name": "Ray Chaisson", "inducted": 1974, "state": "Massachusetts" },
+  { "name": "William Chadwick", "inducted": 1974, "state": "New York" },
+  { "name": "Fred Moseley", "inducted": 1975, "state": "Massachusetts" },
+  { "name": "Joseph Linder", "inducted": 1975, "state": "Minnesota" },
+  { "name": "Stewart Iglehart", "inducted": 1975, "state": "New York" },
+  { "name": "Francis Austie Harding", "inducted": 1975, "state": "Massachusetts" },
+  { "name": "Anthony Conroy", "inducted": 1975, "state": "Minnesota" },
+  { "name": "Robert Ridder", "inducted": 1976, "state": "Minnesota" },
+  { "name": "John Mayasich", "inducted": 1976, "state": "Minnesota" },
+  { "name": "William Cleary", "inducted": 1976, "state": "Massachusetts" },
+  { "name": "William Riley", "inducted": 1977, "state": "Massachusetts" },
+  { "name": "Eddie Olson", "inducted": 1977, "state": "Minnesota" },
+  { "name": "Earl Bartholome", "inducted": 1977, "state": "Minnesota" },
+  { "name": "Hubert Hub Nelson", "inducted": 1978, "state": "Minnesota" },
+  { "name": "Donald Clark", "inducted": 1978, "state": "Massachusetts" },
+  { "name": "Peter Bessone", "inducted": 1978, "state": "Massachusetts" },
+  { "name": "John P. Jack Riley, Jr.", "inducted": 1979, "state": "Massachusetts" },
+  { "name": "Robert Dill", "inducted": 1979, "state": "Minnesota" },
+  { "name": "Nick Kahler", "inducted": 1980, "state": "Minnesota" },
+  { "name": "Walter Bush", "inducted": 1980, "state": "Minnesota" },
+  { "name": "Thomas Williams", "inducted": 1981, "state": "Minnesota" },
+  { "name": "William M. Jennings", "inducted": 1981, "state": "New York" },
+  { "name": "Robert Cleary", "inducted": 1981, "state": "Massachusetts" },
+  { "name": "William Stewart", "inducted": 1982, "state": "Ontario Canada" },
+  { "name": "Cal Marvin", "inducted": 1982, "state": "Minnesota" },
+  { "name": "Jack McCartan", "inducted": 1983, "state": "Minnesota" },
+  { "name": "Oscar Almquist", "inducted": 1983, "state": "Minnesota" },
+  { "name": "William W. Bill Wirtz", "inducted": 1984, "state": "Illinois" },
+  { "name": "William Bill Christian", "inducted": 1984, "state": "Minnesota" },
+  { "name": "Harold Trumble", "inducted": 1985, "state": "Minnesota" },
+  { "name": "Richard Rondeau", "inducted": 1985, "state": "Rhode Island" },
+  { "name": "Robert Blake", "inducted": 1985, "state": "Massachusetts" },
+  { "name": "Ken Yackel", "inducted": 1986, "state": "Minnesota" },
+  { "name": "Jack Garrity", "inducted": 1986, "state": "Massachusetts" },
+  { "name": "Hugh Muzz Murray, Sr.", "inducted": 1987, "state": "Minnesota" },
+  { "name": "John Jack Kirrane", "inducted": 1987, "state": "Massachusetts" },
+  { "name": "Larry Ross", "inducted": 1988, "state": "Minnesota" },
+  { "name": "Richard Desmond", "inducted": 1988, "state": "Massachusetts" },
+  { "name": "Robert Paradise", "inducted": 1989, "state": "Minnesota" },
+  { "name": "Roger Christian", "inducted": 1989, "state": "Minnesota" },
+  { "name": "John Connie Pleban", "inducted": 1990, "state": "Michigan" },
+  { "name": "Willard Ikola", "inducted": 1990, "state": "Minnesota" },
+  { "name": "Herb Brooks", "inducted": 1990, "state": "Minnesota" },
+  { "name": "John Matchefts", "inducted": 1991, "state": "Minnesota" },
+  { "name": "Bob Johnson", "inducted": 1991, "state": "Minnesota" },
+  { "name": "Robbie Ftorek", "inducted": 1991, "state": "Massachusetts" },
+  { "name": "James Fullerton", "inducted": 1992, "state": "Massachusetts" },
+  { "name": "Len Ceglarski", "inducted": 1992, "state": "Massachusetts" },
+  { "name": "Amo Bessone", "inducted": 1992, "state": "Massachusetts" },
+  { "name": "Charles M. Schulz", "inducted": 1993, "state": "Minnesota" },
+  { "name": "David R. Langevin", "inducted": 1993, "state": "Minnesota" },
+  { "name": "John H. Jack Kelley", "inducted": 1993, "state": "Massachusetts" },
+  { "name": "Nevin D. Ned Harkness", "inducted": 1994, "state": "Ontario Canada" },
+  { "name": "Wally Grant", "inducted": 1994, "state": "Minnesota" },
+  { "name": "Joe Cavanagh", "inducted": 1994, "state": "Rhode Island" },
+  { "name": "Ken Morrow", "inducted": 1995, "state": "Michigan" },
+  { "name": "James Claypool", "inducted": 1995, "state": "Minnesota" },
+  { "name": "Henry Boucha", "inducted": 1995, "state": "Minnesota" },
+  { "name": "Craig Patrick", "inducted": 1996, "state": "Massachusetts" },
+  { "name": "Reed Larson", "inducted": 1996, "state": "Minnesota" },
+  { "name": "Sergio Gambucci", "inducted": 1996, "state": "Minnesota" },
+  { "name": "Timothy K. Sheehy", "inducted": 1997, "state": "Massachusetts" },
+  { "name": "William D. Nyrop", "inducted": 1997, "state": "Minnesota" },
+  { "name": "Charles E. Holt, Jr.", "inducted": 1997, "state": "Massachusetts" },
+  { "name": "Lou Nanne", "inducted": 1998, "state": "Ontario Canada" },
+  { "name": "Joe Mullen", "inducted": 1998, "state": "New York" },
+  { "name": "Bruce Mather", "inducted": 1998, "state": "Massachusetts" },
+  { "name": "Mike Lefty Curran", "inducted": 1998, "state": "Minnesota" },
+  { "name": "Sid Watson", "inducted": 1999, "state": "Massachusetts" },
+  { "name": "Gordie Roberts", "inducted": 1999, "state": "Massachusetts" },
+  { "name": "Rod Langway", "inducted": 1999, "state": "Taiwan" },
+  { "name": "Larry Pleau", "inducted": 2000, "state": "Massachusetts" },
+  { "name": "Doug Palazzari", "inducted": 2000, "state": "Minnesota" },
+  { "name": "Neal Broten", "inducted": 2000, "state": "Minnesota" },
+  { "name": "Mike Ramsey", "inducted": 2001, "state": "Minnesota" },
+  { "name": "Paul Johnson", "inducted": 2001, "state": "Minnesota" },
+  { "name": "Dave Christian", "inducted": 2001, "state": "Minnesota" },
+  { "name": "Doug Woog", "inducted": 2002, "state": "Minnesota" },
+  { "name": "Joe Riley", "inducted": 2002, "state": "Massachusetts" },
+  { "name": "Scott Fusco", "inducted": 2002, "state": "Massachusetts" },
+  { "name": "Mark Fusco", "inducted": 2002, "state": "Massachusetts" },
+  { "name": "Pat LaFontaine", "inducted": 2003, "state": "Missouri" },
+  { "name": "Mark Howe", "inducted": 2003, "state": "Michigan" },
+  { "name": "Richard Dick Dougherty", "inducted": 2003, "state": "Minnesota" },
+  { "name": "John Cunniff", "inducted": 2003, "state": "Massachusetts" },
+  { "name": "Mark Johnson", "inducted": 2004, "state": "Minnesota" },
+  { "name": "Mike Ilitch", "inducted": 2004, "state": "Michigan" },
+  { "name": "Phil Housley", "inducted": 2004, "state": "Minnesota" },
+  { "name": "Paul Coppo", "inducted": 2004, "state": "Michigan" },
+  { "name": "Murray Williamson", "inducted": 2005, "state": "Minnesota" },
+  { "name": "Maurice Roberts", "inducted": 2005, "state": "Massachusetts" },
+  { "name": "Lane MacDonald", "inducted": 2005, "state": "Massachusetts" },
+  { "name": "Keith Christiansen", "inducted": 2005, "state": "Minnesota" },
+  { "name": "Mike Milbury", "inducted": 2006, "state": "Massachusetts" },
+  { "name": "Gary Gambucci", "inducted": 2006, "state": "Minnesota" },
+  { "name": "Milton Curly Brink", "inducted": 2006, "state": "Minnesota" },
+  { "name": "John Vanbiesbrouck", "inducted": 2007, "state": "Michigan" },
+  { "name": "John MacInnes", "inducted": 2007, "state": "Ontario Canada" },
+  { "name": "Bobby Carpenter", "inducted": 2007, "state": "Massachusetts" },
+  { "name": "Aaron Broten", "inducted": 2007, "state": "Minnesota" },
+  { "name": "Mike Richter", "inducted": 2008, "state": "Pennsylvania" },
+  { "name": "Brian Leetch", "inducted": 2008, "state": "Texas" },
+  { "name": "Brett Hull", "inducted": 2008, "state": "Ontario Canada" },
+  { "name": "Cammi Granato", "inducted": 2008, "state": "Illinois" },
+  { "name": "Frank Zamboni", "inducted": 2009, "state": "Utah" },
+  { "name": "John LeClair", "inducted": 2009, "state": "Vermont" },
+  { "name": "Tom Barrasso", "inducted": 2009, "state": "Massachusetts" },
+  { "name": "Tony Amonte", "inducted": 2009, "state": "Massachusetts" },
+  { "name": "Jeremy Roenick", "inducted": 2010, "state": "Massachusetts" },
+  { "name": "Kevin Hatcher", "inducted": 2010, "state": "Michigan" },
+  { "name": "Derian Hatcher", "inducted": 2010, "state": "Michigan" },
+  { "name": "Keith Tkachuk", "inducted": 2011, "state": "Massachusetts" },
+  { "name": "Gary Suter", "inducted": 2011, "state": "Wisconsin" },
+  { "name": "Chris Chelios", "inducted": 2011, "state": "Illinois" },
+  { "name": "Eddie Olczyk", "inducted": 2012, "state": "Illinois" },
+  { "name": "Mike Modano", "inducted": 2012, "state": "Michigan" },
+{ "name": "Lou Lamoriello", "inducted": 2012, "state": "Rhode Island" },
+  { "name": "Doug Weight", "inducted": 2013, "state": "Michigan" },
+  { "name": "Ron Mason", "inducted": 2013, "state": "Ontario Canada" },
+  { "name": "Peter Karmanos", "inducted": 2013, "state": "Michigan" },
+  { "name": "Bill Guerin", "inducted": 2013, "state": "Massachusetts" },
+  { "name": "Cindy Curley", "inducted": 2013, "state": "Massachusetts" },
+  { "name": "Lou Vairo", "inducted": 2014, "state": "New York" },
+  { "name": "Jeff Sauer", "inducted": 2014, "state": "Wisconsin" },
+  { "name": "Brian Rafalski", "inducted": 2014, "state": "Michigan" },
+  { "name": "Karyn Bye Dietz", "inducted": 2014, "state": "Wisconsin" },
+  { "name": "Mathieu Schneider", "inducted": 2015, "state": "New York" },
+  { "name": "Angela Ruggiero", "inducted": 2015, "state": "California" },
+  { "name": "Chris Drury", "inducted": 2015, "state": "Connecticut" },
+  { "name": "Ron DeGregorio", "inducted": 2015, "state": "Massachusetts" },
+  { "name": "Craig Janney", "inducted": 2016, "state": "Connecticut" },
+  { "name": "Bill Belisle", "inducted": 2016, "state": "Rhode Island" },
+  { "name": "Scott Young", "inducted": 2017, "state": "Massachusetts" },
+  { "name": "Ron Wilson", "inducted": 2017, "state": "Ontario Canada" },
+  { "name": "Ben Smith", "inducted": 2017, "state": "Massachusetts" },
+  { "name": "Jack Parker", "inducted": 2017, "state": "Massachusetts" },
+  { "name": "Kevin Collins", "inducted": 2017, "state": "Massachusetts" },
+  { "name": "Paul Stewart", "inducted": 2018, "state": "Massachusetts" },
+  { "name": "David Poile", "inducted": 2018, "state": "Ontario Canada" },
+  { "name": "Leland Hago Harrington", "inducted": 2018, "state": "Massachusetts" },
+  { "name": "Natalie Darwitz", "inducted": 2018, "state": "Minnesota" },
+  { "name": "Gordon Red Berenson", "inducted": 2018, "state": "Saskatchewan Canada" },
+  { "name": "Krissy Wendell", "inducted": 2019, "state": "Minnesota" },
+  { "name": "Tim Thomas", "inducted": 2019, "state": "Michigan" },
+  { "name": "Neal Henderson", "inducted": 2019, "state": "Washington, D.C." },
+  { "name": "Brian Gionta", "inducted": 2019, "state": "New York" },
+  { "name": "Gary Bettman", "inducted": 2019, "state": "New York" },
+  { "name": "Jerry York", "inducted": 2020, "state": "Massachusetts" },
+  { "name": "Jenny Potter", "inducted": 2020, "state": "Minnesota" },
+  { "name": "Tony Granato", "inducted": 2020, "state": "Illinois" },
+  { "name": "Dean Blais", "inducted": 2020, "state": "Minnesota" },
+  { "name": "Peter McNab", "inducted": 2021, "state": "British Columbia Canada" },
+  { "name": "Paul Holmgren", "inducted": 2021, "state": "Minnesota" },
+  { "name": "Stan Fischler", "inducted": 2021, "state": "New York" },
+  { "name": "Ryan Miller", "inducted": 2022, "state": "Michigan" },
+  { "name": "Jocelyne Lamoureux-Davidson", "inducted": 2022, "state": "North Dakota" },
+  { "name": "Monique Lamoureux-Morando", "inducted": 2022, "state": "North Dakota" },
+  { "name": "Steve Cash", "inducted": 2022, "state": "Missouri" },
+  { "name": "Jim Johannson", "inducted": 2022, "state": "Minnesota" },
+  { "name": "Katie King Crowley", "inducted": 2023, "state": "New Hampshire" },
+  { "name": "Dustin Brown", "inducted": 2023, "state": "New York" },
+  { "name": "Brian Burke", "inducted": 2023, "state": "Rhode Island" },
+  { "name": "Jamie Langenbrunner", "inducted": 2023, "state": "Minnesota" },
+  { "name": "Brian Murphy", "inducted": 2023, "state": "New Hampshire" },
+  { "name": "Matt Cullen", "inducted": 2024, "state": "Minnesota" },
+  { "name": "Frederic McLaughlin", "inducted": 2024, "state": "Illinois" },
+  { "name": "Brianna Decker", "inducted": 2024, "state": "Wisconsin" },
+  { "name": "Kevin Stevens", "inducted": 2024, "state": "Massachusetts" }
+];
+
+        function populateTable() {
+            const tbody = document.querySelector("table tbody");
+            players.forEach(player => {
+                const row = `<tr><td>${player.name}</td><td>${player.inducted}</td><td>${player.state}</td></tr>`;
+                tbody.innerHTML += row;
+            });
+        }
+
+        function generateChart() {
+            const stateCount = {};
+            players.forEach(player => {
+                stateCount[player.state] = (stateCount[player.state] || 0) + 1;
+            });
+
+            const states = Object.keys(stateCount);
+            const counts = Object.values(stateCount);
+
+            new Chart(document.getElementById("playerChart"), {
+                type: 'bar',
+                data: {
+                    labels: states,
+                    datasets: [{
+                        label: "Number of Players",
+                        data: counts,
+                        backgroundColor: "blue"
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: { beginAtZero: true }
+                    }
+                }
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            populateTable();
+            generateChart();
+        });
+    </script>
+</body>
+</html>
