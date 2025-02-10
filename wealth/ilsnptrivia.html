@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S&P 500 Illinois Trivia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #90EE90;
+            padding-top: 20px;
+            position: fixed;
+            height: 100%;
+            overflow-y: auto;
+        }
+        .sidebar a {
+            display: block;
+            color: black;
+            padding: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .sidebar a:hover, .sidebar a.active {
+            background-color: #76c776;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+            flex-grow: 1;
+            text-align: center;
+        }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="../investment_related.html">Investment Websites</a>
+	<a href="top_brokerages.html">Top Brokerage Firms</a>
+	<a href="dividends.html">Dividend Investing</a>
+        <a href="financeglossary.html">Financial Glossary</a>
+        <a href="#" class="active">IL S&P 500 Trivia</a>
+	<a href="global_exchanges.html">Global Exchanges</a>
+    </div>
+
+    <div class="content">
+        <h1>S&P 500 Illinois Trivia</h1>
+        <div id="quiz"></div> <br>
+        <button id="back" class="hidden" onclick="prevQuestion()">Back</button>
+        <button id="next" onclick="nextQuestion()">Next</button>
+        <button id="submit" class="hidden" onclick="showSummary()">Submit</button>
+        <div id="summary" class="hidden"></div>
+    </div>
+
+    <script>
+        const questions = [
+            { question: "I began as a linseed processing firm and now a global agriculture industry giant. What is my symbol?", type: "text", answer: "ADM" },
+            { question: "I began as a tractor company and is celebrating 100 years of being in business (founded in 1925). What is my symbol?", type: "text", answer: "CAT" },
+{ question: "I was founded in San Bernandino CA and sell more toys than one can imagine but that is not my primary business. What is my symbol?", type: "text", answer: "MCD" },
+	{ question: "I am the first airline to carry a US President on a commerical flight. What is my symbol and who did I fly?", type: "text", answer: "UAL, Richard Nixon" },
+	   { question: "I put the prescriptions in child resistant containers and also invented malted milkshake in 1922. What is my symbol?", type: "text", answer: "WBA" },
+ 	{ question: "I am the largest energy delivery company in USA serving over 10.5 million customers. What is my symbol?", type: "text", answer: "EXC" },
+	{ question: "Humira one of the largest selling drugs is our Product. What is my symbol?", type: "text", answer: "ABBV" },
+	{ question: "I am an industrial supply company founded in 1927 and became public in 1967. What is my symbol?", type: "text", answer: "GWW" },
+	{ question: "I am a food supply company and you might have the ketchup I make in your kitchen. What is my symbol?", type: "text", answer: "KHC" },
+	{ question: "I am the maker of Oreo and Ritz. What is my symbol?", type: "text", answer: "MDLZ" },
+	{ question: "I am a Real Estate company founded in 1783 in UK and headquarters in Chicago. What is my symbol?", type: "text", answer: "JLL" }
+        ];
+
+        let currentQuestionIndex = 0;
+        const quizDiv = document.getElementById("quiz");
+        const nextButton = document.getElementById("next");
+        const backButton = document.getElementById("back");
+        const submitButton = document.getElementById("submit");
+        const answers = [];
+
+        function showQuestion(index) {
+            quizDiv.innerHTML = "";
+            const q = questions[index];
+            const questionDiv = document.createElement("div");
+            questionDiv.innerHTML = `<p>${q.question}</p><input type="text" id="q${index}" value="${answers[index] || ''}"><br>`;
+            quizDiv.appendChild(questionDiv);
+            
+            backButton.classList.toggle("hidden", index === 0);
+            nextButton.classList.toggle("hidden", index === questions.length - 1);
+            submitButton.classList.toggle("hidden", index !== questions.length - 1);
+        }
+
+        function nextQuestion() {
+            answers[currentQuestionIndex] = document.getElementById(`q${currentQuestionIndex}`).value;
+            currentQuestionIndex++;
+            showQuestion(currentQuestionIndex);
+        }
+
+        function prevQuestion() {
+            currentQuestionIndex--;
+            showQuestion(currentQuestionIndex);
+        }
+
+        function showSummary() {
+            answers[currentQuestionIndex] = document.getElementById(`q${currentQuestionIndex}`).value;
+            let summary = "<h2>Summary</h2>";
+            questions.forEach((q, index) => {
+                let userAnswer = answers[index] || "No answer provided";
+                let correctAnswer = q.answer;
+                summary += `<p>${q.question} <br> Your Answer: ${userAnswer} <br> Correct Answer: ${correctAnswer}</p>`;
+            });
+
+            document.getElementById("summary").innerHTML = summary;
+            document.getElementById("summary").classList.remove("hidden");
+        }
+
+        showQuestion(currentQuestionIndex);
+    </script>
+</body>
+</html>
